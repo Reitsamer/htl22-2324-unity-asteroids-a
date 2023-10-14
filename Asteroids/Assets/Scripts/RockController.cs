@@ -71,4 +71,25 @@ public class RockController : MonoBehaviour
             
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(    // left
+            transform.position + new Vector3(xMin, yMin),
+            transform.position + new Vector3(xMin, yMax));
+        
+        Gizmos.DrawLine(    // top
+            transform.position + new Vector3(xMin, yMax),
+            transform.position + new Vector3(xMax, yMax));
+        
+        Gizmos.DrawLine(    // right
+            transform.position + new Vector3(xMax, yMax),
+            transform.position + new Vector3(xMax, yMin));
+        
+        Gizmos.DrawLine(    // bottom
+            transform.position + new Vector3(xMax, yMin),
+            transform.position + new Vector3(xMin, yMin));
+        
+    }
 }
